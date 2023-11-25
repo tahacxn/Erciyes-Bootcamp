@@ -7,20 +7,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
 </head>
 <body>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Order Date</th>
-                <th>Required Date</th>
-                <th>Difference</th>
-            </tr>
-        </thead>
-        <tbody>
-
-        </tbody>
-    </table>
+    
 
 </body>
 <script>
@@ -29557,32 +29544,45 @@
         }
     ]
 
-    orders.forEach(item =>{
+    var i = 0;
+    orders.forEach(item => {
 
-       var tr = document.createElement("tr")
-       
-       var td1 = document.createElement("td")
-       td1.innerHTML = item.id;
-       tr.appendChild(td1);
+        var date = new Date(item.orderDate)
 
-       var td2 = document.createElement("td")
-       td2.innerHTML = item.customerId;
-       tr.appendChild(td2);
+        var year = date.getFullYear()
+        var month = date.getMonth()
 
-       var td3 = document.createElement("td")
-       td3.innerHTML = moment(item.orderDate).format("DD/MM/YYYY dddd");
-       tr.appendChild(td3);
 
-       var td4 = document.createElement("td")
-       td4.innerHTML = moment(item.requiredDate).format("DD/MM/YYYY dddd");
-       tr.appendChild(td4);
-
-       var td5 = document.createElement("td")
-       td5.innerHTML = moment(item.orderDate).diff(item.shippedDate, "days")
-       tr.appendChild(td5);
-
-       document.querySelector("tbody").appendChild(tr);
+        if (year == 1996 && month == 10) {
+            i++
+        }
 
     })
+    console.log("Sipariş sayısı: " + i);
+
+
+    orders.forEach(item => {
+
+        
+        const shippedDate = new Date(item.shippedDate)
+        const requiredDate = new Date(item.requiredDate)
+
+        const difference = shippedDate.getTime() - requiredDate.getTime()
+        const days = difference / (1000 * 3600 * 24)
+
+
+        if (days >= 5 && days <= 10) {
+            
+            const orderDate = moment(item.orderDate);
+
+
+            const formattedOrderDate = orderDate.format('D MMMM YYYY h:mm A');
+
+            console.log(`ID: ${item.id}, Order Date: ${formattedOrderDate}, Required Date: ${item.requiredDate}, Days: ${days}`);
+
+        }
+
+    })
+
 </script>
 </html>
