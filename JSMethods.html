@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let word = "  Çağatay Yıldız";
+        word = word.replace(/\s/g, "");
+        console.log(word);
+
+        let word2 = "cagatay yildiz";
+        word2 = word.toUpperCase();
+        console.log(word2.trim());
+
+        let word3 = "******Çağatay Yıldız";
+        word3 = word3.replaceAll("*", " ");
+        console.log(word3);
+
+        let word4 ="Çağatay  Yıldız";
+        word4 = word4.replace(/\s{2,}/g, " ");
+        console.log(word4);
+
+        let word5 = "**Tech Career**";
+        word5 = word5.replaceAll("*", " ");
+        console.log(word5);
+
+        let word6 = "Tech Career";
+        word6 = `***${word6}***`;
+        console.log(word6);
+
+
+        let originalText = "Tech Career Bilişim teknolojileri";
+        let words = originalText.split(' ');
+        let lastWord = words[words.length - 1].toUpperCase();
+
+        let modifiedText = originalText.slice(0, -(lastWord.length)) + lastWord;
+        console.log(modifiedText);
+
+        let originalText2 = "tech career";
+        let words2 = originalText2.split(' ');
+        let modifiedText2 = "";
+
+        for (let i = 0; i < words2.length; i++) {
+            let firstLetter = words2[i][0].toUpperCase();
+            let restOfWord = words2[i].substring(1);
+            modifiedText2 += firstLetter + restOfWord + " ";
+        }
+
+        modifiedText2 = modifiedText2.trim();
+
+        console.log(modifiedText2);
+    </script>
+</body>
+</html>

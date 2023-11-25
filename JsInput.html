@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .math{
+            width: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: solid 1px black;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+        .input{
+            margin-bottom: 1rem;
+        }
+        .sum{
+            width: 100px;
+            border: solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="input">
+        <input type="number">
+        <label for="number">First Number</label>
+    </div>
+    <div class="input-2">
+        <input type="number">
+        <label for="number">Second Number</label>
+    </div>
+    <h1 class="sum">sum</h1>
+    <div class="container">
+
+        <div class="math" id="add">+</div>
+        <div class="math" id="sub">-</div>
+        <div class="math" id="mult">*</div>
+        <div class="math" id="division">/</div>
+    </div>
+</body>
+<script>
+    let add = document.getElementById("add");
+    let sub = document.getElementById("sub");
+    let mul = document.getElementById("mult");
+    let division = document.getElementById("division");
+    let input = document.getElementsByClassName("input");
+    let input2 = document.getElementsByClassName("input-2");
+    let sum = document.getElementById("sum");
+
+    function addition{
+        
+    }
+</script>
+</html>

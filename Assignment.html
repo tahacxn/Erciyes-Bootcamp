@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+        // 1. Question
+
+        let sum = 0;
+    for(let i = 0; i < 250 ;i++){
+        sum += i;
+    }
+    console.log(sum);
+
+    // 2. Question
+
+    let sum2 = 0;
+    for(let i = 25; i <= 125 ;i++){
+        sum2 += i;
+    }
+    console.log(sum2);
+
+    // 3. Question
+
+    let sum3 = 0;
+    for(let i = 1; i <= 1000 ;i++){
+        sum3 += i;
+    }
+    let divide = sum3 / 1000;
+    console.log(divide);
+
+    // 4. Question
+
+    for(let i = 1; i < 100 ; i++){
+        if(i % 5 === 0){
+            console.log(i)
+        }
+    }
+
+    // 5. Question
+
+    var numbers = [33, 11, -5, 20, 1, 55, 100, 2, 94, 55, 11];
+
+    let maxNum = numbers[0];
+
+    for (let i = 1; i< numbers.length ; i++){
+        if(numbers[i] > maxNum){
+            maxNum = numbers[i];
+        }
+    }
+
+    console.log(maxNum);
+
+    let minNum = numbers[0];
+
+    for (let i = 1; i < numbers.length ; i++){
+        if(numbers[i] < minNum){
+            minNum = numbers[i];
+        }
+    }
+
+    console.log(minNum);
+</script>
+</html>

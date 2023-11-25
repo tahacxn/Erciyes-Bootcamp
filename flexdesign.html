@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav{
+            background-color: #2c3e50;
+            padding: 2rem ;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: 'Roboto', sans-serif;
+            text-transform: uppercase;
+
+        }
+        ul{
+            display: flex;
+            align-items: center;
+        }
+        ul li > a{
+            text-decoration: none;
+            color: #fff;
+            font-size: 1rem;
+            margin-left: 1rem;
+
+        }
+        ul li > a:hover{
+            color: #1abc9c;
+        }
+        h1{
+            color:#fff ;
+            font-size: 1.5rem;
+            font-weight:700;
+        }
+        main {
+            background-color: #1abc9c;
+            display: flex;
+            min-height: 80vh;
+            overflow: hidden;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Roboto', sans-serif;
+            height: 100vh;
+        }
+        .circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 100%;
+            background-color: #2d3e50;
+        }
+        .heading{
+            text-transform: uppercase;
+            font-size: 64px;
+            margin: 24px 0;
+        }
+        .line{
+             width: 50%;
+            height: 2px;
+            color: #fff;
+            background-color: #fff;
+            border: 1px solid #fff;
+            border-radius: 100%;
+            margin: 24px 0;
+        }
+        .info{
+            font-size: 24px;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>start boostrap</h1>
+            <ul>
+                <li>
+                    <a href="">Portfolio</a>
+                </li>
+                <li>
+                    <a href="">About</a>
+                </li>
+                <li>
+                    <a href="">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="circle"></div>
+        <h1 class="heading">Start Boostrap</h1>
+        <div class="line"></div>
+        <p class="info">Graphic Artist - Web Designer - Illustrator</p>
+    </main>
+
+</body>
+</html>

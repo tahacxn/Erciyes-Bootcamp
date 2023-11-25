@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: auto auto auto auto;
+        }
+        .box{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 250px;
+            height: 250px;
+            border: 1px solid gray;
+        }
+        .box > img {
+            width: 100%;
+            padding: 1rem;
+        }
+        .box > button{
+            margin-top: 6px;
+        }
+        @media only screen and (max-width:850px) {
+            .container{
+                grid-template-columns: auto auto;
+            }
+        }
+        @media only screen and (max-width:425px) {
+            .container{
+                grid-template-columns: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1698778573557-8ec38f05faa1?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyN3x8fGVufDB8fHx8fA%3D%3D" alt="">
+            <p>BOX-1</p>
+            <button>VIEW</button>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1698778573557-8ec38f05faa1?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyN3x8fGVufDB8fHx8fA%3D%3D" alt="">
+            <p>BOX-2</p>
+            <button>VIEW</button>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1698778573557-8ec38f05faa1?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyN3x8fGVufDB8fHx8fA%3D%3D" alt="">
+            <p>BOX-3</p>
+            <button>VIEW</button>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1698778573557-8ec38f05faa1?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyN3x8fGVufDB8fHx8fA%3D%3D" alt="">
+            <p>BOX-4</p>
+            <button>VIEW</button>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1698778573557-8ec38f05faa1?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyN3x8fGVufDB8fHx8fA%3D%3D" alt="">
+            <p>BOX-5</p>
+            <button>VIEW</button>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1698778573557-8ec38f05faa1?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyN3x8fGVufDB8fHx8fA%3D%3D" alt="">
+            <p>BOX-6</p>
+            <button>VIEW</button>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1698778573557-8ec38f05faa1?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyN3x8fGVufDB8fHx8fA%3D%3D" alt="">
+            <p>BOX-7</p>
+            <button>VIEW</button>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1698778573557-8ec38f05faa1?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyN3x8fGVufDB8fHx8fA%3D%3D" alt="">
+            <p>BOX-8</p>
+            <button>VIEW</button>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1698778573557-8ec38f05faa1?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyN3x8fGVufDB8fHx8fA%3D%3D" alt="">
+            <p>BOX-9</p>
+            <button>VIEW</button>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1698778573557-8ec38f05faa1?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyN3x8fGVufDB8fHx8fA%3D%3D" alt="">
+            <p>BOX-10</p>
+            <button>VIEW</button>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1698778573557-8ec38f05faa1?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyN3x8fGVufDB8fHx8fA%3D%3D" alt="">
+            <p>BOX-11</p>
+            <button>VIEW</button>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1698778573557-8ec38f05faa1?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyN3x8fGVufDB8fHx8fA%3D%3D" alt="">
+            <p>BOX-12</p>
+            <button>VIEW</button>
+        </div>
+
+    </div>
+
+</body>
+</html>
