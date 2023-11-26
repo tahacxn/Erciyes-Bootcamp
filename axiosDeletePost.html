@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.1/axios.min.js" integrity="sha512-m9S8W3a9hhBHPFAbEIaG7J9P92dzcAWwM42VvJp5n1/M599ldK6Z2st2SfJGsX0QR4LfCVr681vyU5vW8d218w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+
+<div class="container mt-4">
+  <div class="row">
+    <!-- First Div with 3 inputs and a button -->
+    <div class="col-md-6">
+      <form>
+        <div class="form-group">
+          <label for="input1">Company Name:</label>
+          <input type="text" class="form-control" id="companyName" placeholder="Company Name">
+        </div>
+        <div class="form-group">
+          <label for="input2">Contact Name:</label>
+          <input type="text" class="form-control" id="contactName" placeholder="Contact Name">
+        </div>
+        <div class="form-group">
+          <label for="input3">Contact Title:</label>
+          <input type="text" class="form-control" id="contactTitle" placeholder="Contact Title">
+        </div>
+        <button type="button" onclick="add()" class="btn btn-primary">Add</button>
+      </form>
+    </div>
+
+    <!-- Second Div with 1 input and a button -->
+    <div class="col-md-6">
+      <form>
+        <div class="form-group">
+          <label for="input4">Customer ID:</label>
+          <input type="text" class="form-control" id="customerId" placeholder="Customer ID">
+        </div>
+        <button type="button" class="btn btn-danger" onclick="deleteData()">Delete</button>
+      </form>
+    </div>
+  </div>
+  <div class="container mt-4">
+    <h2>Customer Information</h2>
+    <ul class="list-group" id="customerList">
+      <!-- List items will be added dynamically here -->
+    </ul>
+  </div>
+</div>
+
+
+</body>
+<script>
+    const BASE_URL = 'https://northwind.vercel.app/api/customers';
+    function add(){
+
+    let companyName = document.getElementById("companyName").value;
+    let contactName = document.getElementById("contactName").value;
+    let contactTitle = document.getElementById("contactTitle").value;
+
+    let newCustomers = {
+        companyName,
+        contactName,
+        contactTitle
+    }
+
+    if (contactName === "" || contactTitle === "" || companyName === "") {
+        alert("All fields must be filled");
+        return;
+    }
+
+    axios.post(BASE_URL , newCustomers).then(res =>{
+            getData();
+            alert("Added to list!!");
+        })
+
+    companyName = document.getElementById("companyName").value = "";
+    contactName = document.getElementById("contactName").value = "";
+    contactTitle = document.getElementById("contactTitle").value = "";
+
+
+}
+
+function getData(){
+   document.querySelector("ul").innerText = "";
+   
+   axios.get(BASE_URL).then(res => {
+        res.data.forEach(customer => {
+            let li = document.createElement("li");
+           li.innerText = customer.id + " - " + customer.companyName + " - " +customer.contactName + " - " + customer.contactTitle;
+           document.querySelector("ul").appendChild(li)
+        });
+
+   })
+}
+const deleteData = async () =>{
+    try {
+        let customerId = document.getElementById("customerId").value;
+
+        await axios.delete(`${BASE_URL}/${customerId}`);
+        getData();
+        document.getElementById('customerId').value = '';
+
+    }catch (error) {
+    alert('Please enter a valid ID');
+    console.error('Error deleting data:', error);
+  }
+
+}
+</script>
+</html>
